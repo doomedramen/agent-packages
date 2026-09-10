@@ -1,0 +1,15 @@
+version: 2
+kind: pack
+name: typescript-monorepo
+packages:
+  - id: baseline
+    source: ../../packages/global-baseline
+  - id: typescript
+    source: ../../packages/project-typescript
+outputs:
+  - directory: .
+    use: [baseline]
+    exclude: []
+  - directory: apps/web
+    use: [typescript]
+    exclude: []

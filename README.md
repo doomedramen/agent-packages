@@ -1,49 +1,111 @@
-# agents.md reference packages
+# Public v2 agent packages
 
-Installable Git packages for [`@doomedramen/agents.md`](https://www.npmjs.com/package/@doomedramen/agents.md).
+This repository contains real, reviewable Git sources for
+[`@doomedramen/agents.md`](https://github.com/doomedramen/agents.md). Every
+package uses the schema 2 fragment format. Every pack is a schema 2 recipe.
 
-Each directory under `packages/` is a package. Its `agent.yaml` declares the
-scope and destinations, and its `AGENTS.md` is the canonical instruction file.
+The examples are deliberately ordinary Git content: no registry, account, or
+hosted service is required. Pin a branch, tag, or commit when adopting a
+source in a real project.
 
-## Project package
+## Quick start: one project package
 
-Run this from a TypeScript or Node.js repository:
-
-```sh
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/project-typescript
-```
-
-This installs project-scoped `AGENTS.md` guidance and a Claude Code
-`CLAUDE.md` import adapter.
-
-- [Manifest](packages/project-typescript/agent.yaml)
-- [Instructions](packages/project-typescript/AGENTS.md)
-
-## Global package
-
-Review the file before installing it. Global instructions apply across every
-repository used by the configured agent:
+From a TypeScript or Node.js repository:
 
 ```sh
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/global-baseline
+npx @doomedramen/agents.md init
+npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/project-typescript --ref main
+npx @doomedramen/agents.md edit
+npx @doomedramen/agents.md check
 ```
 
-This installs global Codex guidance at `~/.codex/AGENTS.md`, global Claude
-guidance at `~/.claude/AGENTS.md`, and the Claude import adapter at
-`~/.claude/CLAUDE.md`.
+This creates and verifies a project `AGENTS.md`, a Claude Code import adapter,
+an `agents.yaml` configuration, an immutable `agents.lock`, and a local
+`.agents/project.md` file for repository-specific notes.
 
-- [Manifest](packages/global-baseline/agent.yaml)
-- [Instructions](packages/global-baseline/AGENTS.md)
+Review the source before adopting it:
 
-The manifest sets the scope. The command has no global or project flag.
+- [`project-typescript` manifest](packages/project-typescript/agent.yaml)
+- [`project-typescript` package README](packages/project-typescript/README.md)
+- [fragment sources](packages/project-typescript/fragments/)
 
-## Package layout
+## Quick start: a shareable pack
+
+The `typescript-project` pack composes the baseline and TypeScript packages
+into one root output:
+
+```sh
+npx @doomedramen/agents.md init
+npx @doomedramen/agents.md add github:doomedramen/agent-packages#packs/typescript-project --ref main
+npx @doomedramen/agents.md check
+```
+
+Pack source and member commits are recorded separately in `agents.lock`.
+Removing the pack removes only its contribution; a direct selection of one of
+its member packages remains independent.
+
+- [`typescript-project` recipe](packs/typescript-project/agents.yaml)
+- [`typescript-project` pack README](packs/typescript-project/README.md)
+
+## Quick start: a monorepo pack
+
+The `typescript-monorepo` pack demonstrates one root output and one nested
+output:
+
+```sh
+npx @doomedramen/agents.md init
+npx @doomedramen/agents.md add github:doomedramen/agent-packages#packs/typescript-monorepo --ref main
+npx @doomedramen/agents.md check
+```
+
+It writes root guidance and separate `apps/web/AGENTS.md` guidance. Local
+context stays next to each output, so application-specific notes do not leak
+between packages.
+
+- [`typescript-monorepo` recipe](packs/typescript-monorepo/agents.yaml)
+- [`typescript-monorepo` pack README](packs/typescript-monorepo/README.md)
+
+## Global guidance
+
+The same destination-neutral package can be selected globally. The consumer
+chooses the registered agent destinations; the package manifest does not write
+legacy v1 targets:
+
+```sh
+npx @doomedramen/agents.md init --global --agents claude-code,codex
+npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/global-baseline --ref main --global
+npx @doomedramen/agents.md check --global
+```
+
+Review global output carefully. It applies to every repository using those
+agent destinations.
+
+## Repository layout
 
 ```text
 packages/<name>/
-├── agent.yaml
-└── AGENTS.md
+├── agent.yaml                 # schema 2 package manifest
+├── README.md                  # audience, assumptions, exclusions, license
+└── fragments/*.md             # focused reusable guidance
+
+packs/<name>/
+├── agents.yaml                # schema 2 pack recipe
+└── README.md                  # selected outputs and usage
 ```
 
-The package repository is intentionally Git-native. Tags or commit SHAs can be
-used as Git refs when a consumer needs a stable revision.
+Keep fragments focused. Package README files describe intended audience,
+assumptions, exclusions, and source licensing. Packs may use relative members
+inside this repository; consumers lock the recipe and every member separately.
+
+## Contributing
+
+1. Edit or add a focused fragment.
+2. Update its schema 2 manifest and README.
+3. Inspect the rendered result in a consumer project.
+4. Commit the package or pack, then use its commit or a reviewed ref in
+   downstream `agents.yaml` files.
+
+Do not add task-specific skills, credentials, generated consumer state, or
+legacy v1 destination declarations to this repository.
+
+Source license: MIT. See [`LICENSE`](LICENSE).

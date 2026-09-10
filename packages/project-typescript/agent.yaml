@@ -1,16 +1,10 @@
-schema: 1
+schema: 2
 name: project-typescript
-description: Project-scoped guidance for a TypeScript and Node.js repository
-canonical:
-  source: AGENTS.md
-files:
-  - source: AGENTS.md
-    targets:
-      - scope: project
-        path: AGENTS.md
-        mode: direct
-      - scope: project
-        agent: claude-code
-        path: CLAUDE.md
-        mode: import
-        import: AGENTS.md
+description: Project-scoped workflow and validation guidance for TypeScript repositories
+fragments:
+  - id: repository-workflow
+    source: fragments/repository-workflow.md
+    title: Repository workflow
+  - id: validation-and-boundaries
+    source: fragments/validation-and-boundaries.md
+    title: Validation and boundaries

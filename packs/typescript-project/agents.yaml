@@ -1,0 +1,12 @@
+version: 2
+kind: pack
+name: typescript-project
+packages:
+  - id: baseline
+    source: ../../packages/global-baseline
+  - id: typescript
+    source: ../../packages/project-typescript
+outputs:
+  - directory: .
+    use: [baseline, typescript]
+    exclude: []
