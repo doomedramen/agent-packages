@@ -1,0 +1,8 @@
+{
+  "name": "agent-packages-direct-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check src/index.js"
+  }
+}

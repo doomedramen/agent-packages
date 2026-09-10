@@ -65,6 +65,21 @@ between packages.
 - [`typescript-monorepo` recipe](packs/typescript-monorepo/agents.yaml)
 - [`typescript-monorepo` pack README](packs/typescript-monorepo/README.md)
 
+## Committed consumer examples
+
+The repository also includes two small consumers with generated output,
+immutable locks, and local project context:
+
+- [`examples/direct-project`](examples/direct-project) selects one package
+  directly.
+- [`examples/typescript-monorepo`](examples/typescript-monorepo) selects the
+  nested-output pack.
+
+Run `npx @doomedramen/agents.md check` from either directory to verify its
+committed state. The example applications are intentionally tiny; the point is
+to make source selection, locking, local additions, and output boundaries
+visible.
+
 ## Global guidance
 
 The same destination-neutral package can be selected globally. The consumer

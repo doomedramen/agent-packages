@@ -1,0 +1,62 @@
+version: 2
+rendererVersion: "2"
+configSha256: sha256:90aab7075545b91b5ed4d8ec8eb7b57360ff45a9543320059938009452f105ee
+selectionSha256: sha256:1c412ad8af3378a7979d318429e28762616e7a2cc61065faf5a31fcc704b4b96
+packages:
+  project-typescript:
+    id: project-typescript
+    requestedSource: github:doomedramen/agent-packages#packages/project-typescript
+    source:
+      type: git
+      url: https://github.com/doomedramen/agent-packages.git
+      path: packages/project-typescript
+    requestedRef: main
+    commit: 16b991bbb60d205a3d3ce1ae33123caec2d3c88e
+    manifestSha256: sha256:eb144c565984f2719056c54aa75245221ec95c66d0b7677b22e3607c78de2ead
+    fragments:
+      - id: repository-workflow
+        source: fragments/repository-workflow.md
+        title: Repository workflow
+        sha256: sha256:0c22b17ea72256c5ef5d36b84f38eee54592ce3616e20f93756db7c34ec4b885
+      - id: validation-and-boundaries
+        source: fragments/validation-and-boundaries.md
+        title: Validation and boundaries
+        sha256: sha256:f61b55265dc39bce1678a75a0e5cf879a4af2af2e8dfb4efff42df72135316bf
+packs: {}
+localFiles:
+  .agents/project.md: sha256:9dfd4219dbd25155647c9a18afc233cf1302b6fa1e73962ffa13bdd455a2a78f
+generatedFiles:
+  AGENTS.md:
+    sha256: sha256:177d4012b7d17ffe7800f1ef4633ba76b820bcb40291d04aecac2231eb1c97fe
+    owners:
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+      - local:.agents/project.md
+    kind: agents
+  CLAUDE.md:
+    sha256: sha256:336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49
+    owners:
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+      - local:.agents/project.md
+    kind: adapter
+ownership:
+  AGENTS.md:
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+    - local:.agents/project.md
+  CLAUDE.md:
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+    - local:.agents/project.md
+outputs:
+  .:
+    directory: .
+    use:
+      - project-typescript
+    exclude: []
+    local:
+      - .agents/project.md
+    generated:
+      - AGENTS.md
+      - CLAUDE.md

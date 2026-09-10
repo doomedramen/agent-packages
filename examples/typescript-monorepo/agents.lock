@@ -1,0 +1,142 @@
+version: 2
+rendererVersion: "2"
+configSha256: sha256:802886b7c13f5be853c7c34870d85cb06b0981b5bc4b1562b9809e41af8e7237
+selectionSha256: sha256:9f3ef9f4e7462d1440884828d9e479c531b09240885a0f18765e97236e163d5b
+packages: {}
+packs:
+  typescript-monorepo:
+    id: typescript-monorepo
+    directory: .
+    requestedSource: github:doomedramen/agent-packages#packs/typescript-monorepo
+    source:
+      type: git
+      url: https://github.com/doomedramen/agent-packages.git
+      path: packs/typescript-monorepo
+    requestedRef: main
+    commit: 16b991bbb60d205a3d3ce1ae33123caec2d3c88e
+    manifestSha256: sha256:1413a716940bcaa374658bcfc166a5269d0fa334c38d3300136ca89b7fc3b175
+    recipeHash: sha256:1413a716940bcaa374658bcfc166a5269d0fa334c38d3300136ca89b7fc3b175
+    members:
+      - id: baseline
+        requestedSource: ../../packages/global-baseline
+        source:
+          type: git
+          url: https://github.com/doomedramen/agent-packages.git
+          path: packages/global-baseline
+        requestedRef: null
+        commit: 16b991bbb60d205a3d3ce1ae33123caec2d3c88e
+        manifestSha256: sha256:63c44857c166cc365e8f534818164043fa3d3abb0633c2c513a472ddeb4168a1
+        fragments:
+          - id: operating-principles
+            source: fragments/operating-principles.md
+            title: Operating principles
+            sha256: sha256:1ec25a3dbc791ab71843b29034d5a13b66fe31f0254bb2a74d47900804453a04
+          - id: verification-and-safety
+            source: fragments/verification-and-safety.md
+            title: Verification and safety
+            sha256: sha256:86aed3faa411e1d3493757032ad04bf42a16bd252e4e97b556ae11c55d7b09fa
+        recipeSource: https://github.com/doomedramen/agent-packages.git
+        recipeCommit: 16b991bbb60d205a3d3ce1ae33123caec2d3c88e
+        recipePath: packs/typescript-monorepo
+      - id: typescript
+        requestedSource: ../../packages/project-typescript
+        source:
+          type: git
+          url: https://github.com/doomedramen/agent-packages.git
+          path: packages/project-typescript
+        requestedRef: null
+        commit: 16b991bbb60d205a3d3ce1ae33123caec2d3c88e
+        manifestSha256: sha256:eb144c565984f2719056c54aa75245221ec95c66d0b7677b22e3607c78de2ead
+        fragments:
+          - id: repository-workflow
+            source: fragments/repository-workflow.md
+            title: Repository workflow
+            sha256: sha256:0c22b17ea72256c5ef5d36b84f38eee54592ce3616e20f93756db7c34ec4b885
+          - id: validation-and-boundaries
+            source: fragments/validation-and-boundaries.md
+            title: Validation and boundaries
+            sha256: sha256:f61b55265dc39bce1678a75a0e5cf879a4af2af2e8dfb4efff42df72135316bf
+        recipeSource: https://github.com/doomedramen/agent-packages.git
+        recipeCommit: 16b991bbb60d205a3d3ce1ae33123caec2d3c88e
+        recipePath: packs/typescript-monorepo
+    outputs:
+      - directory: .
+        use:
+          - baseline
+        exclude: []
+      - directory: apps/web
+        use:
+          - typescript
+        exclude: []
+    omitOutputs: []
+localFiles:
+  .agents/project.md: sha256:bc7742a0c50cd293088178408b5f4a4ca6f7352c83d7faef95148038687fedd4
+  apps/web/.agents/project.md: sha256:6e3a3af420b0aaf2d94b7962ce53f0589b1b0e8b19d35145ea710a0335233e07
+generatedFiles:
+  AGENTS.md:
+    sha256: sha256:82e926434f7842d66728e6bea63ef0edab637b13e7afd370c4def235cb110ee8
+    owners:
+      - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/operating-principles
+      - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/verification-and-safety
+      - local:.agents/project.md
+    kind: agents
+  CLAUDE.md:
+    sha256: sha256:336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49
+    owners:
+      - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/operating-principles
+      - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/verification-and-safety
+      - local:.agents/project.md
+    kind: adapter
+  apps/web/AGENTS.md:
+    sha256: sha256:0d5afb76e53b1b495050fc583ab9512603b8986f63326ef29c8938701abaab52
+    owners:
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+      - local:apps/web/.agents/project.md
+    kind: agents
+  apps/web/CLAUDE.md:
+    sha256: sha256:336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49
+    owners:
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+      - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+      - local:apps/web/.agents/project.md
+    kind: adapter
+ownership:
+  AGENTS.md:
+    - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/operating-principles
+    - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/verification-and-safety
+    - local:.agents/project.md
+  CLAUDE.md:
+    - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/operating-principles
+    - https://github.com/doomedramen/agent-packages.git#packages/global-baseline@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/verification-and-safety
+    - local:.agents/project.md
+  apps/web/AGENTS.md:
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+    - local:apps/web/.agents/project.md
+  apps/web/CLAUDE.md:
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/repository-workflow
+    - https://github.com/doomedramen/agent-packages.git#packages/project-typescript@16b991bbb60d205a3d3ce1ae33123caec2d3c88e/validation-and-boundaries
+    - local:apps/web/.agents/project.md
+outputs:
+  .:
+    directory: .
+    use:
+      - typescript-monorepo
+    exclude: []
+    local:
+      - .agents/project.md
+    generated:
+      - AGENTS.md
+      - CLAUDE.md
+  apps/web:
+    directory: apps/web
+    use:
+      - typescript-monorepo
+    exclude: []
+    local:
+      - apps/web/.agents/project.md
+    generated:
+      - apps/web/AGENTS.md
+      - apps/web/CLAUDE.md
+    introducedBy: typescript-monorepo

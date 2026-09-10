@@ -1,0 +1,15 @@
+version: 2
+packages:
+  - id: project-typescript
+    source: github:doomedramen/agent-packages#packages/project-typescript
+    ref: main
+packs: []
+outputs:
+  - directory: .
+    use:
+      - project-typescript
+    exclude: []
+    local:
+      - .agents/project.md
+    adapters:
+      - claude-code

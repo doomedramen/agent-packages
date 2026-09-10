@@ -1,0 +1,25 @@
+version: 2
+packages: []
+packs:
+  - id: typescript-monorepo
+    source: github:doomedramen/agent-packages#packs/typescript-monorepo
+    ref: main
+    directory: .
+    omitOutputs: []
+outputs:
+  - directory: .
+    use:
+      - typescript-monorepo
+    exclude: []
+    local:
+      - .agents/project.md
+    adapters:
+      - claude-code
+  - directory: apps/web
+    use:
+      - typescript-monorepo
+    exclude: []
+    local:
+      - apps/web/.agents/project.md
+    adapters:
+      - claude-code
