@@ -8,7 +8,7 @@ guidance into the nested application.
 From this directory, verify the committed state with:
 
 ```sh
-npx @doomedramen/agents.md check
+npx rulepacks check
 ```
 
 Inspect these generated files:

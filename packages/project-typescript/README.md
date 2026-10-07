@@ -16,7 +16,7 @@ Source license: MIT; see the repository root [`LICENSE`](../../LICENSE).
 Install in a project with:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/project-typescript --ref main
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packages/project-typescript --ref main
+npx rulepacks check
 ```

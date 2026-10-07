@@ -7,9 +7,9 @@ Use it when the consumer wants application-local instructions without copying
 root guidance into every nested output:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packs/typescript-monorepo --ref main
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packs/typescript-monorepo --ref main
+npx rulepacks check
 ```
 
 The consumer's local files stay beside their outputs:

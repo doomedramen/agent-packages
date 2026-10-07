@@ -8,7 +8,7 @@ without installing anything first.
 From this directory, verify the committed state with:
 
 ```sh
-npx @doomedramen/agents.md check
+npx rulepacks check
 ```
 
 The configuration uses the public GitHub source with `ref: main` for a simple

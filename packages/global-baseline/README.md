@@ -19,7 +19,7 @@ Source license: MIT; see the repository root [`LICENSE`](../../LICENSE).
 Install globally with:
 
 ```sh
-npx @doomedramen/agents.md init --global --agents claude-code,codex
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/global-baseline --ref main --global
-npx @doomedramen/agents.md check --global
+npx rulepacks init --global --agents claude-code,codex
+npx rulepacks add github:doomedramen/agent-packages#packages/global-baseline --ref main --global
+npx rulepacks check --global
 ```

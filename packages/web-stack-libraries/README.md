@@ -20,8 +20,8 @@ Source license: MIT; see the repository root [`LICENSE`](../../LICENSE).
 Install the package and exclude fragments your project does not use:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/web-stack-libraries --ref main
-npx @doomedramen/agents.md edit
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packages/web-stack-libraries --ref main
+npx rulepacks edit
+npx rulepacks check
 ```

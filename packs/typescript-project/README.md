@@ -12,9 +12,9 @@ reviewed package.
 Install it from any project:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packs/typescript-project --ref main
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packs/typescript-project --ref main
+npx rulepacks check
 ```
 
 Source license: MIT; see the repository root [`LICENSE`](../../LICENSE).

@@ -1,7 +1,7 @@
 # Public v2 agent packages
 
 This repository contains real, reviewable Git sources for
-[`@doomedramen/agents.md`](https://github.com/doomedramen/agents.md). Every
+[`rulepacks`](https://github.com/doomedramen/agents.md). Every
 package uses the schema 2 fragment format. Every pack is a schema 2 recipe.
 
 The examples are deliberately ordinary Git content: no registry, account, or
@@ -13,10 +13,10 @@ source in a real project.
 From a TypeScript or Node.js repository:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/project-typescript --ref main
-npx @doomedramen/agents.md edit
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packages/project-typescript --ref main
+npx rulepacks edit
+npx rulepacks check
 ```
 
 This creates and verifies a project `AGENTS.md`, a Claude Code import adapter,
@@ -35,9 +35,9 @@ The `typescript-project` pack composes the baseline and TypeScript packages
 into one root output:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packs/typescript-project --ref main
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packs/typescript-project --ref main
+npx rulepacks check
 ```
 
 Pack source and member commits are recorded separately in `agents.lock`.
@@ -51,14 +51,14 @@ its member packages remains independent.
 
 The `web-stack-libraries` package contains separate fragments for common
 framework, UI, RPC, validation, monitoring, and test libraries. Add it to a
-project that uses these libraries, then use `agents.md edit` to exclude the
+project that uses these libraries, then use `rulepacks edit` to exclude the
 fragments that do not apply:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/web-stack-libraries --ref main
-npx @doomedramen/agents.md edit
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packages/web-stack-libraries --ref main
+npx rulepacks edit
+npx rulepacks check
 ```
 
 - [Package manifest](packages/web-stack-libraries/agent.yaml)
@@ -71,9 +71,9 @@ The `typescript-monorepo` pack demonstrates one root output and one nested
 output:
 
 ```sh
-npx @doomedramen/agents.md init
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packs/typescript-monorepo --ref main
-npx @doomedramen/agents.md check
+npx rulepacks init
+npx rulepacks add github:doomedramen/agent-packages#packs/typescript-monorepo --ref main
+npx rulepacks check
 ```
 
 It writes root guidance and separate `apps/web/AGENTS.md` guidance. Local
@@ -93,7 +93,7 @@ immutable locks, and local project context:
 - [`examples/typescript-monorepo`](examples/typescript-monorepo) selects the
   nested-output pack.
 
-Run `npx @doomedramen/agents.md check` from either directory to verify its
+Run `npx rulepacks check` from either directory to verify its
 committed state. The example applications are intentionally tiny; the point is
 to make source selection, locking, local additions, and output boundaries
 visible.
@@ -105,9 +105,9 @@ chooses the registered agent destinations; the package manifest does not write
 legacy v1 targets:
 
 ```sh
-npx @doomedramen/agents.md init --global --agents claude-code,codex
-npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/global-baseline --ref main --global
-npx @doomedramen/agents.md check --global
+npx rulepacks init --global --agents claude-code,codex
+npx rulepacks add github:doomedramen/agent-packages#packages/global-baseline --ref main --global
+npx rulepacks check --global
 ```
 
 Review global output carefully. It applies to every repository using those
