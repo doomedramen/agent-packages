@@ -11,9 +11,12 @@ fragments:
   - id: tailwindcss
     source: fragments/tailwindcss.md
     title: Tailwind CSS
-  - id: tailwind-class-utilities
-    source: fragments/tailwind-class-utilities.md
-    title: clsx and tailwind-merge
+  - id: clsx
+    source: fragments/clsx.md
+    title: clsx
+  - id: tailwind-merge
+    source: fragments/tailwind-merge.md
+    title: tailwind-merge
   - id: react-aria-components
     source: fragments/react-aria-components.md
     title: React Aria Components
@@ -53,12 +56,18 @@ fragments:
   - id: vitest
     source: fragments/vitest.md
     title: Vitest
-  - id: testing-library
-    source: fragments/testing-library.md
-    title: Testing Library
+  - id: testing-library-react
+    source: fragments/testing-library-react.md
+    title: Testing Library React
+  - id: testing-library-user-event
+    source: fragments/testing-library-user-event.md
+    title: Testing Library user-event
   - id: playwright
     source: fragments/playwright.md
     title: Playwright
+  - id: axe-core
+    source: fragments/axe-core.md
+    title: axe-core
   - id: axe-playwright
     source: fragments/axe-playwright.md
     title: axe-core with Playwright
