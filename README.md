@@ -47,6 +47,24 @@ its member packages remains independent.
 - [`typescript-project` recipe](packs/typescript-project/agents.yaml)
 - [`typescript-project` pack README](packs/typescript-project/README.md)
 
+## Shared web library guidance
+
+The `web-stack-libraries` package contains separate fragments for common
+framework, UI, RPC, validation, monitoring, and test libraries. Add it to a
+project that uses these libraries, then use `agents.md edit` to exclude the
+fragments that do not apply:
+
+```sh
+npx @doomedramen/agents.md init
+npx @doomedramen/agents.md add github:doomedramen/agent-packages#packages/web-stack-libraries --ref main
+npx @doomedramen/agents.md edit
+npx @doomedramen/agents.md check
+```
+
+- [Package manifest](packages/web-stack-libraries/agent.yaml)
+- [Package README](packages/web-stack-libraries/README.md)
+- [Library guidance fragments](packages/web-stack-libraries/fragments/)
+
 ## Quick start: a monorepo pack
 
 The `typescript-monorepo` pack demonstrates one root output and one nested

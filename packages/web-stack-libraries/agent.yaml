@@ -1,0 +1,64 @@
+schema: 2
+name: web-stack-libraries
+description: Reusable coding guidance for common web application libraries
+fragments:
+  - id: nextjs-app-router
+    source: fragments/nextjs-app-router.md
+    title: Next.js App Router
+  - id: react
+    source: fragments/react.md
+    title: React
+  - id: tailwindcss
+    source: fragments/tailwindcss.md
+    title: Tailwind CSS
+  - id: tailwind-class-utilities
+    source: fragments/tailwind-class-utilities.md
+    title: clsx and tailwind-merge
+  - id: react-aria-components
+    source: fragments/react-aria-components.md
+    title: React Aria Components
+  - id: pikl-ui-admin
+    source: fragments/pikl-ui-admin.md
+    title: Pikl UI Admin
+  - id: tanstack-react-table
+    source: fragments/tanstack-react-table.md
+    title: TanStack React Table
+  - id: recharts
+    source: fragments/recharts.md
+    title: Recharts
+  - id: next-themes
+    source: fragments/next-themes.md
+    title: next-themes
+  - id: lucide-react
+    source: fragments/lucide-react.md
+    title: lucide-react
+  - id: connectrpc
+    source: fragments/connectrpc.md
+    title: ConnectRPC
+  - id: protobuf-es
+    source: fragments/protobuf-es.md
+    title: Protobuf-ES
+  - id: pas-contracts
+    source: fragments/pas-contracts.md
+    title: PAS contracts package
+  - id: zod
+    source: fragments/zod.md
+    title: Zod
+  - id: t3-env-nextjs
+    source: fragments/t3-env-nextjs.md
+    title: T3 Env for Next.js
+  - id: sentry-nextjs
+    source: fragments/sentry-nextjs.md
+    title: Sentry for Next.js
+  - id: vitest
+    source: fragments/vitest.md
+    title: Vitest
+  - id: testing-library
+    source: fragments/testing-library.md
+    title: Testing Library
+  - id: playwright
+    source: fragments/playwright.md
+    title: Playwright
+  - id: axe-playwright
+    source: fragments/axe-playwright.md
+    title: axe-core with Playwright
